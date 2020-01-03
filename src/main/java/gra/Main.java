@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
         System.out.println("Podaj imię gracza nr 1");
         Scanner scanner4 = new Scanner(System.in);
@@ -20,42 +22,42 @@ public class Main {
 
 
         int[] wynikGracz1 = new int[17];
-        int jedynkiGracz1 = wynikGracz1[0];
-        int dwojkiGracz1 = wynikGracz1[1];
-        int trojkiGracz1 = wynikGracz1[2];
-        int czworkiGracz1 = wynikGracz1[3];
-        int piatkiGracz1 = wynikGracz1[4];
-        int szotkiGracz1 = wynikGracz1[5];
-        int bonusGracz1 = wynikGracz1[6];
-        int suma1Gracz1 = wynikGracz1[7] = wynikGracz1[0] + wynikGracz1[1] + wynikGracz1[2] + wynikGracz1[3] + wynikGracz1[4] + wynikGracz1[5] + wynikGracz1[6];
-        int trzyJednakoweGracz1 = wynikGracz1[8];
-        int cztwryJednakoweGracz1 = wynikGracz1[9];
-        int fullGracz1 = wynikGracz1[10];
-        int malyStritGracz1 = wynikGracz1[11];
-        int duzyStritGracz1 = wynikGracz1[12];
-        int generalGracz1 = wynikGracz1[13];
-        int szansaGracz1 = wynikGracz1[14];
-        int suma2Gracz1 = wynikGracz1[15] = wynikGracz1[8] + wynikGracz1[9] + wynikGracz1[10] + wynikGracz1[11] + wynikGracz1[12] + wynikGracz1[13] + wynikGracz1[14];
-        int razemGracz1 = wynikGracz1[16] = wynikGracz1[7] + wynikGracz1[15];
+//        int jedynkiGracz1 = wynikGracz1[0];
+//        int dwojkiGracz1 = wynikGracz1[1];
+//        int trojkiGracz1 = wynikGracz1[2];
+//        int czworkiGracz1 = wynikGracz1[3];
+//        int piatkiGracz1 = wynikGracz1[4];
+//        int szotkiGracz1 = wynikGracz1[5];
+//        int bonusGracz1 = wynikGracz1[6];
+//        int suma1Gracz1 = wynikGracz1[7] = wynikGracz1[0] + wynikGracz1[1] + wynikGracz1[2] + wynikGracz1[3] + wynikGracz1[4] + wynikGracz1[5] + wynikGracz1[6];
+//        int trzyJednakoweGracz1 = wynikGracz1[8];
+//        int cztwryJednakoweGracz1 = wynikGracz1[9];
+//        int fullGracz1 = wynikGracz1[10];
+//        int malyStritGracz1 = wynikGracz1[11];
+//        int duzyStritGracz1 = wynikGracz1[12];
+//        int generalGracz1 = wynikGracz1[13];
+//        int szansaGracz1 = wynikGracz1[14];
+//        int suma2Gracz1 = wynikGracz1[15] = wynikGracz1[8] + wynikGracz1[9] + wynikGracz1[10] + wynikGracz1[11] + wynikGracz1[12] + wynikGracz1[13] + wynikGracz1[14];
+//        int razemGracz1 = wynikGracz1[16] = wynikGracz1[7] + wynikGracz1[15];
 
         int[] wynikGracz2 = new int[17];
-        int jedynkiGracz2 = wynikGracz2[0];
-        int dwojkiGracz2 = wynikGracz2[1];
-        int trojkiGracz2 = wynikGracz2[2];
-        int czworkiGracz2 = wynikGracz2[3];
-        int piatkiGracz2 = wynikGracz2[4];
-        int szotkiGracz2 = wynikGracz2[5];
-        int bonusGracz2 = wynikGracz2[6];
-        int suma1Gracz2 = wynikGracz2[7] = wynikGracz2[0] + wynikGracz2[1] + wynikGracz2[2] + wynikGracz2[3] + wynikGracz2[4] + wynikGracz2[5] + wynikGracz2[6];
-        int trzyJednakoweGracz2 = wynikGracz2[8];
-        int cztwryJednakoweGracz2 = wynikGracz2[9];
-        int fullGracz2 = wynikGracz2[10];
-        int malyStritGracz2 = wynikGracz2[11];
-        int duzyStritGracz2 = wynikGracz2[12];
-        int generalGracz2 = wynikGracz2[13];
-        int szansaGracz2 = wynikGracz2[14];
-        int suma2Gracz2 = wynikGracz2[15] = wynikGracz2[8] + wynikGracz2[9] + wynikGracz2[10] + wynikGracz2[11] + wynikGracz2[12] + wynikGracz2[13] + wynikGracz2[14];
-        int razemGracz2 = wynikGracz2[16];
+//        int jedynkiGracz2 = wynikGracz2[0];
+//        int dwojkiGracz2 = wynikGracz2[1];
+//        int trojkiGracz2 = wynikGracz2[2];
+//        int czworkiGracz2 = wynikGracz2[3];
+//        int piatkiGracz2 = wynikGracz2[4];
+//        int szotkiGracz2 = wynikGracz2[5];
+//        int bonusGracz2 = wynikGracz2[6];
+//        int suma1Gracz2 = wynikGracz2[7] = wynikGracz2[0] + wynikGracz2[1] + wynikGracz2[2] + wynikGracz2[3] + wynikGracz2[4] + wynikGracz2[5] + wynikGracz2[6];
+//        int trzyJednakoweGracz2 = wynikGracz2[8];
+//        int cztwryJednakoweGracz2 = wynikGracz2[9];
+//        int fullGracz2 = wynikGracz2[10];
+//        int malyStritGracz2 = wynikGracz2[11];
+//        int duzyStritGracz2 = wynikGracz2[12];
+//        int generalGracz2 = wynikGracz2[13];
+//        int szansaGracz2 = wynikGracz2[14];
+//        int suma2Gracz2 = wynikGracz2[15] = wynikGracz2[8] + wynikGracz2[9] + wynikGracz2[10] + wynikGracz2[11] + wynikGracz2[12] + wynikGracz2[13] + wynikGracz2[14];
+//        int razemGracz2 = wynikGracz2[16];
 
         for (int z = 0; z < 13; z++) {
 
@@ -86,6 +88,7 @@ public class Main {
                             for (int i = 0; i < iloscKosci; i++) {
                                 Scanner scanner2 = new Scanner(System.in);
                                 int nrKosci = scanner2.nextInt();
+                                // kosci[nrKosci-1] = a.nextInt(5)+1;
                                 switch (nrKosci) {
                                     case 1:
                                         int kostka11 = a.nextInt(5) + 1;
@@ -203,9 +206,9 @@ public class Main {
         }
         System.out.println("KONIEC GRY");
         if (wynikGracz1[16] > wynikGracz2[16]) {
-            System.out.println("Gracz: " + gracz1 + " uzyskał/a " + wynikGracz1[16] + " i wygrał/a gre");
+            System.out.println("Gracz: " + gracz1 + " uzyskał/a " + wynikGracz1[16] + " pkt i wygrał/a gre.");
         } else if (wynikGracz1[16] < wynikGracz2[16]) {
-            System.out.println("Gracz: " + gracz2 + " uzyskał/a " + wynikGracz2[16] + " i wygrał/a gre");
+            System.out.println("Gracz: " + gracz2 + " uzyskał/a " + wynikGracz2[16] + " pkt i wygrał/a gre.");
         } else {
             System.out.println("REMIS");
         }
@@ -213,6 +216,7 @@ public class Main {
 
 
     public static void sort(int tab[]) {
+        //Arrays.sort(tab);
         int temp;
         int zmiana = 1;
 
@@ -254,14 +258,29 @@ public class Main {
 
     }
 
+
+    // boolean zuzyte[]
     public static void wyborFigury(int tab[], int wynik[]) {
         sort(tab);
         System.out.println("Wybierz figurę");
         Scanner scanner3 = new Scanner(System.in);
         int figura = scanner3.nextInt();
+        /*
 
+        if (zuzyte[figura]){
+
+            System.out.println('figura juz zuzyta');
+            return;
+            }
+         */
+
+        /*
+        int ilosci[] = new int[6];
+        for(int x:tab)ilosci[x]++;
+         */
         switch (figura) {
             case 1:
+                // if ilosci[1] > 0
                 if (tab[0] == 1 || tab[1] == 1 || tab[2] == 1 || tab[3] == 1 || tab[4] == 1) {
                     int sumaJedynek = 0;
                     for (int i = 0; i < tab.length; i++) {
@@ -270,6 +289,9 @@ public class Main {
                         }
                     }
                     wynik[0] = sumaJedynek;
+                    break;
+                } else{
+                    wynik[0]=0;
                     break;
                 }
             case 2:
@@ -282,6 +304,9 @@ public class Main {
                     }
                     wynik[1] = sumaDwojek * 2;
                     break;
+                } else{
+                    wynik[1]=0;
+                    break;
                 }
             case 3:
                 if (tab[0] == 3 || tab[1] == 3 || tab[2] == 3 || tab[3] == 3 || tab[4] == 3) {
@@ -292,6 +317,9 @@ public class Main {
                         }
                     }
                     wynik[2] = sumaTrojek * 3;
+                    break;
+                } else{
+                    wynik[2]=0;
                     break;
                 }
             case 4:
@@ -304,6 +332,9 @@ public class Main {
                     }
                     wynik[3] = sumaCzworek * 4;
                     break;
+                } else{
+                    wynik[3]=0;
+                    break;
                 }
             case 5:
                 if (tab[0] == 5 || tab[1] == 5 || tab[2] == 5 || tab[3] == 5 || tab[4] == 5) {
@@ -314,6 +345,9 @@ public class Main {
                         }
                     }
                     wynik[4] = sumaPiatek * 5;
+                    break;
+                } else{
+                    wynik[4]=0;
                     break;
                 }
             case 6:
@@ -326,20 +360,32 @@ public class Main {
                     }
                     wynik[5] = sumaSzostek * 6;
                     break;
+                } else{
+                    wynik[5]=0;
+                    break;
                 }
             case 7:
                 if ((tab[0] == tab[1] && tab[1] == tab[2]) || (tab[1] == tab[2] && tab[2] == tab[3]) || (tab[2] == tab[3] && tab[3] == tab[4])) {
                     wynik[8] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
+                    break;
+                } else{
+                    wynik[8]=0;
                     break;
                 }
             case 8:
                 if ((tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3]) || (tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4])) {
                     wynik[9] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
                     break;
+                } else{
+                    wynik[9]=0;
+                    break;
                 }
             case 9:
                 if (tab[0] == tab[1] && tab[2] == tab[3] && tab[3] == tab[4] || (tab[0] == tab[1] && tab[1] == tab[2] && tab[3] == tab[4])) {
                     wynik[10] = 25;
+                    break;
+                } else{
+                    wynik[10]=0;
                     break;
                 }
             case 10:
@@ -350,21 +396,31 @@ public class Main {
                         (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 5)) {
                     wynik[11] = 30;
                     break;
+                } else{
+                    wynik[11]=0;
+                    break;
                 }
             case 11:
                 if ((tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 6)) {
                     wynik[12] = 40;
+                    break;
+                } else{
+                    wynik[12]=0;
                     break;
                 }
             case 12:
                 if (tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4]) {
                     wynik[13] = 50;
                     break;
+                } else{
+                    wynik[13]=0;
+                    break;
                 }
             case 13:
                 wynik[14] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
                 break;
         }
+        // zuzyte[figura] = true;
         wynik[7] = wynik[0] + wynik[1] + wynik[2] + wynik[3] + wynik[4] + wynik[5] + wynik[6];
         wynik[15] = wynik[8] + wynik[9] + wynik[10] + wynik[11] + wynik[12] + wynik[13] + wynik[14];
         wynik[16] = wynik[7] + wynik[15];
