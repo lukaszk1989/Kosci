@@ -22,6 +22,7 @@ public class Main {
 
 
         int[] wynikGracz1 = new int[17];
+        int[] sprawdzenieGracz1 = new int[13];
 //        int jedynkiGracz1 = wynikGracz1[0];
 //        int dwojkiGracz1 = wynikGracz1[1];
 //        int trojkiGracz1 = wynikGracz1[2];
@@ -41,6 +42,7 @@ public class Main {
 //        int razemGracz1 = wynikGracz1[16] = wynikGracz1[7] + wynikGracz1[15];
 
         int[] wynikGracz2 = new int[17];
+        int[] sprawdzenieGracz2 = new int[13];
 //        int jedynkiGracz2 = wynikGracz2[0];
 //        int dwojkiGracz2 = wynikGracz2[1];
 //        int trojkiGracz2 = wynikGracz2[2];
@@ -121,12 +123,12 @@ public class Main {
                             System.out.println(gracz1 + " wyrzycił/a:");
                             System.out.println("(Kostka1: " + k1 + ")  (Kostka2: " + k2 + ")  (Kostka3: " + k3 + ")  (Kostka4: " + k4 + ")  (Kostka5: " + k5 + ")");
                             int[] tab = {k1, k2, k3, k4, k5};
-                            wyborFigury(tab, wynikGracz1);
+                            wyborFigury(tab, wynikGracz1, sprawdzenieGracz1);
                         }
                     } else {
                         wybranieFigury++;
                         int[] tab = {k1, k2, k3, k4, k5};
-                        wyborFigury(tab, wynikGracz1);
+                        wyborFigury(tab, wynikGracz1, sprawdzenieGracz1);
                     }
 
                 }
@@ -136,11 +138,11 @@ public class Main {
                 System.out.println("");
                 System.out.println("");
                 System.out.println("Rzuca gracz: " + gracz2);
-                int k1 = a.nextInt(5) + 1;
-                int k2 = b.nextInt(5) + 1;
-                int k3 = c.nextInt(5) + 1;
-                int k4 = d.nextInt(5) + 1;
-                int k5 = e.nextInt(5) + 1;
+                int k1 = a.nextInt(6) + 1;
+                int k2 = b.nextInt(6) + 1;
+                int k3 = c.nextInt(6) + 1;
+                int k4 = d.nextInt(6) + 1;
+                int k5 = e.nextInt(6) + 1;
                 int wybranieFigury = 0;
                 int iloscRzutow = 1;
 
@@ -193,12 +195,12 @@ public class Main {
                             System.out.println(gracz2 + " wyrzycił/a:");
                             System.out.println("(Kostka1: " + k1 + ")  (Kostka2: " + k2 + ")  (Kostka3: " + k3 + ")  (Kostka4: " + k4 + ")  (Kostka5: " + k5 + ")");
                             int[] tab = {k1, k2, k3, k4, k5};
-                            wyborFigury(tab, wynikGracz2);
+                            wyborFigury(tab, wynikGracz2, sprawdzenieGracz2);
                         }
                     } else {
                         wybranieFigury++;
                         int[] tab = {k1, k2, k3, k4, k5};
-                        wyborFigury(tab, wynikGracz2);
+                        wyborFigury(tab, wynikGracz2, sprawdzenieGracz2);
                     }
 
                 }
@@ -260,11 +262,13 @@ public class Main {
 
 
     // boolean zuzyte[]
-    public static void wyborFigury(int tab[], int wynik[]) {
+    public static void wyborFigury(int tab[], int wynik[], int sprawdzenie[]) {
         sort(tab);
-        System.out.println("Wybierz figurę");
-        Scanner scanner3 = new Scanner(System.in);
-        int figura = scanner3.nextInt();
+        int wybor = 0;
+        while (wybor == 0) {
+            System.out.println("Wybierz figurę");
+            Scanner scanner3 = new Scanner(System.in);
+            int figura = scanner3.nextInt();
         /*
 
         if (zuzyte[figura]){
@@ -278,155 +282,198 @@ public class Main {
         int ilosci[] = new int[6];
         for(int x:tab)ilosci[x]++;
          */
-        switch (figura) {
-            case 1:
-                // if ilosci[1] > 0
-                if (tab[0] == 1 || tab[1] == 1 || tab[2] == 1 || tab[3] == 1 || tab[4] == 1) {
-                    int sumaJedynek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 1) {
-                            sumaJedynek++;
+            if (sprawdzenie[figura - 1] == 0) {
+                switch (figura) {
+                    case 1:
+                        //   if (sprawdzenie[0] == 0) {
+                        if (tab[0] == 1 || tab[1] == 1 || tab[2] == 1 || tab[3] == 1 || tab[4] == 1) {
+                            int sumaJedynek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 1) {
+                                    sumaJedynek++;
+                                }
+                            }
+                            wynik[0] = sumaJedynek;
+                            //       sprawdzenie[0] = 1;
+                            break;
+                        } else {
+                            wynik[0] = 0;
+                            //         sprawdzenie[0] = 1;
+                            break;
                         }
-                    }
-                    wynik[0] = sumaJedynek;
-                    break;
-                } else{
-                    wynik[0]=0;
-                    break;
-                }
-            case 2:
-                if (tab[0] == 2 || tab[1] == 2 || tab[2] == 2 || tab[3] == 2 || tab[4] == 2) {
-                    int sumaDwojek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 2) {
-                            sumaDwojek++;
+                        //     } else {
+                        //          System.out.println("Figura była już wykorzystana. Wybierz jeszcze raz.");
+                        //          return;
+                        //      }
+                    case 2:
+                        //     if (sprawdzenie[1] == 0) {
+                        if (tab[0] == 2 || tab[1] == 2 || tab[2] == 2 || tab[3] == 2 || tab[4] == 2) {
+                            int sumaDwojek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 2) {
+                                    sumaDwojek++;
+                                }
+                            }
+                            wynik[1] = sumaDwojek * 2;
+                            //        sprawdzenie[1] = 1;
+                            break;
+                        } else {
+                            wynik[1] = 0;
+                            //            sprawdzenie[1] = 1;
+                            break;
                         }
-                    }
-                    wynik[1] = sumaDwojek * 2;
-                    break;
-                } else{
-                    wynik[1]=0;
-                    break;
-                }
-            case 3:
-                if (tab[0] == 3 || tab[1] == 3 || tab[2] == 3 || tab[3] == 3 || tab[4] == 3) {
-                    int sumaTrojek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 3) {
-                            sumaTrojek++;
+                        //       }
+                    case 3:
+                        //      if (sprawdzenie[2] == 0) {
+                        if (tab[0] == 3 || tab[1] == 3 || tab[2] == 3 || tab[3] == 3 || tab[4] == 3) {
+                            int sumaTrojek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 3) {
+                                    sumaTrojek++;
+                                }
+                            }
+                            wynik[2] = sumaTrojek * 3;
+                            //         sprawdzenie[2] = 1;
+                            break;
+                        } else {
+                            wynik[2] = 0;
+                            //         sprawdzenie[2] = 1;
+                            break;
                         }
-                    }
-                    wynik[2] = sumaTrojek * 3;
-                    break;
-                } else{
-                    wynik[2]=0;
-                    break;
-                }
-            case 4:
-                if (tab[0] == 4 || tab[1] == 4 || tab[2] == 4 || tab[3] == 4 || tab[4] == 4) {
-                    int sumaCzworek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 4) {
-                            sumaCzworek++;
+                        //        }
+                    case 4:
+                        //      if (sprawdzenie[3] == 0) {
+                        if (tab[0] == 4 || tab[1] == 4 || tab[2] == 4 || tab[3] == 4 || tab[4] == 4) {
+                            int sumaCzworek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 4) {
+                                    sumaCzworek++;
+                                }
+                            }
+                            wynik[3] = sumaCzworek * 4;
+                            //     sprawdzenie[3] = 1;
+                            break;
+                        } else {
+                            wynik[3] = 0;
+                            break;
                         }
-                    }
-                    wynik[3] = sumaCzworek * 4;
-                    break;
-                } else{
-                    wynik[3]=0;
-                    break;
-                }
-            case 5:
-                if (tab[0] == 5 || tab[1] == 5 || tab[2] == 5 || tab[3] == 5 || tab[4] == 5) {
-                    int sumaPiatek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 5) {
-                            sumaPiatek++;
+                        //    }
+                    case 5:
+                        //      if (sprawdzenie[4] == 0) {
+                        if (tab[0] == 5 || tab[1] == 5 || tab[2] == 5 || tab[3] == 5 || tab[4] == 5) {
+                            int sumaPiatek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 5) {
+                                    sumaPiatek++;
+                                }
+                            }
+                            wynik[4] = sumaPiatek * 5;
+                            break;
+                        } else {
+                            wynik[4] = 0;
+                            break;
                         }
-                    }
-                    wynik[4] = sumaPiatek * 5;
-                    break;
-                } else{
-                    wynik[4]=0;
-                    break;
-                }
-            case 6:
-                if (tab[0] == 6 || tab[1] == 6 || tab[2] == 6 || tab[3] == 6 || tab[4] == 6) {
-                    int sumaSzostek = 0;
-                    for (int i = 0; i < tab.length; i++) {
-                        if (tab[i] == 6) {
-                            sumaSzostek++;
+                        //      }
+                    case 6:
+                        //     if (sprawdzenie[5] == 0) {
+                        if (tab[0] == 6 || tab[1] == 6 || tab[2] == 6 || tab[3] == 6 || tab[4] == 6) {
+                            int sumaSzostek = 0;
+                            for (int i = 0; i < tab.length; i++) {
+                                if (tab[i] == 6) {
+                                    sumaSzostek++;
+                                }
+                            }
+                            wynik[5] = sumaSzostek * 6;
+                            break;
+                        } else {
+                            wynik[5] = 0;
+                            break;
                         }
-                    }
-                    wynik[5] = sumaSzostek * 6;
-                    break;
-                } else{
-                    wynik[5]=0;
-                    break;
+                        //      }
+                    case 7:
+                        //      if (sprawdzenie[6] == 0) {
+                        if ((tab[0] == tab[1] && tab[1] == tab[2]) || (tab[1] == tab[2] && tab[2] == tab[3]) || (tab[2] == tab[3] && tab[3] == tab[4])) {
+                            wynik[8] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
+                            break;
+                        } else {
+                            wynik[8] = 0;
+                            break;
+                        }
+                        //     }
+                    case 8:
+                        //     if (sprawdzenie[7] == 0) {
+                        if ((tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3]) || (tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4])) {
+                            wynik[9] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
+                            break;
+                        } else {
+                            wynik[9] = 0;
+                            break;
+                        }
+                        //    }
+                    case 9:
+                        //     if (sprawdzenie[8] == 0) {
+                        if (tab[0] == tab[1] && tab[2] == tab[3] && tab[3] == tab[4] || (tab[0] == tab[1] && tab[1] == tab[2] && tab[3] == tab[4])) {
+                            wynik[10] = 25;
+                            break;
+                        } else {
+                            wynik[10] = 0;
+                            break;
+                        }
+                        //    }
+                    case 10:
+                        //    if (sprawdzenie[9] == 0) {
+                        if ((tab[0] == 1 && tab[1] == 1 && tab[2] == 2 && tab[3] == 3 && tab[4] == 4) || (tab[0] == 1 && tab[1] == 2 && tab[2] == 2 && tab[3] == 3 && tab[4] == 4) ||
+                                (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 3 && tab[4] == 4) || (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 4) ||
+                                (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) ||
+                                (tab[0] == 2 && tab[1] == 3 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 4 && tab[4] == 5) ||
+                                (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 5)) {
+                            wynik[11] = 30;
+                            break;
+                        } else {
+                            wynik[11] = 0;
+                            break;
+                        }
+                        //       }
+                    case 11:
+                        //      if (sprawdzenie[10] == 0) {
+                        if ((tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 6)) {
+                            wynik[12] = 40;
+                            break;
+                        } else {
+                            wynik[12] = 0;
+                            break;
+                        }
+                        //    }
+                    case 12:
+                        //     if (sprawdzenie[12] == 0) {
+                        if (tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4]) {
+                            wynik[13] = 50;
+                            break;
+                        } else {
+                            wynik[13] = 0;
+                            break;
+                        }
+                        //    }
+                    case 13:
+                        if (sprawdzenie[12] == 0) {
+                            wynik[14] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
+                            break;
+                        }
                 }
-            case 7:
-                if ((tab[0] == tab[1] && tab[1] == tab[2]) || (tab[1] == tab[2] && tab[2] == tab[3]) || (tab[2] == tab[3] && tab[3] == tab[4])) {
-                    wynik[8] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
-                    break;
-                } else{
-                    wynik[8]=0;
-                    break;
-                }
-            case 8:
-                if ((tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3]) || (tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4])) {
-                    wynik[9] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
-                    break;
-                } else{
-                    wynik[9]=0;
-                    break;
-                }
-            case 9:
-                if (tab[0] == tab[1] && tab[2] == tab[3] && tab[3] == tab[4] || (tab[0] == tab[1] && tab[1] == tab[2] && tab[3] == tab[4])) {
-                    wynik[10] = 25;
-                    break;
-                } else{
-                    wynik[10]=0;
-                    break;
-                }
-            case 10:
-                if ((tab[0] == 1 && tab[1] == 1 && tab[2] == 2 && tab[3] == 3 && tab[4] == 4) || (tab[0] == 1 && tab[1] == 2 && tab[2] == 2 && tab[3] == 3 && tab[4] == 4) ||
-                        (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 3 && tab[4] == 4) || (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 4) ||
-                        (tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) ||
-                        (tab[0] == 2 && tab[1] == 3 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 4 && tab[4] == 5) ||
-                        (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 5)) {
-                    wynik[11] = 30;
-                    break;
-                } else{
-                    wynik[11]=0;
-                    break;
-                }
-            case 11:
-                if ((tab[0] == 1 && tab[1] == 2 && tab[2] == 3 && tab[3] == 4 && tab[4] == 5) || (tab[0] == 2 && tab[1] == 3 && tab[2] == 4 && tab[3] == 5 && tab[4] == 6)) {
-                    wynik[12] = 40;
-                    break;
-                } else{
-                    wynik[12]=0;
-                    break;
-                }
-            case 12:
-                if (tab[0] == tab[1] && tab[1] == tab[2] && tab[2] == tab[3] && tab[3] == tab[4]) {
-                    wynik[13] = 50;
-                    break;
-                } else{
-                    wynik[13]=0;
-                    break;
-                }
-            case 13:
-                wynik[14] = tab[0] + tab[1] + tab[2] + tab[3] + tab[4];
-                break;
-        }
-        // zuzyte[figura] = true;
-        wynik[7] = wynik[0] + wynik[1] + wynik[2] + wynik[3] + wynik[4] + wynik[5] + wynik[6];
-        wynik[15] = wynik[8] + wynik[9] + wynik[10] + wynik[11] + wynik[12] + wynik[13] + wynik[14];
-        wynik[16] = wynik[7] + wynik[15];
-        if (wynik[0] + wynik[1] + wynik[2] + wynik[3] + wynik[4] + wynik[5] > 62) {
-            wynik[6] = 35;
+                wybor++;
+            } else {
+                System.out.println("Figura była już wykorzystana. Wybierz jeszcze raz.");
+            }
+            sprawdzenie[figura - 1] = 1;
+            // zuzyte[figura] = true;
+            wynik[7] = wynik[0] + wynik[1] + wynik[2] + wynik[3] + wynik[4] + wynik[5] + wynik[6];
+            wynik[15] = wynik[8] + wynik[9] + wynik[10] + wynik[11] + wynik[12] + wynik[13] + wynik[14];
+            wynik[16] = wynik[7] + wynik[15];
+            if (wynik[0] + wynik[1] + wynik[2] + wynik[3] + wynik[4] + wynik[5] > 62) {
+                wynik[6] = 35;
+            }
         }
     }
 }
+
 
