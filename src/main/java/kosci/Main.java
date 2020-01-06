@@ -21,23 +21,7 @@ public class Main {
         int[] wynikGracz2 = new int[17];
         int[] sprawdzenieGracz2 = new int[13];
         int[] kostkiGracz2 = new int[5];
-//        int jedynkiGracz2 = wynikGracz2[0];
-//        int dwojkiGracz2 = wynikGracz2[1];
-//        int trojkiGracz2 = wynikGracz2[2];
-//        int czworkiGracz2 = wynikGracz2[3];
-//        int piatkiGracz2 = wynikGracz2[4];
-//        int szotkiGracz2 = wynikGracz2[5];
-//        int bonusGracz2 = wynikGracz2[6];
-//        int suma1Gracz2 = wynikGracz2[7] = wynikGracz2[0] + wynikGracz2[1] + wynikGracz2[2] + wynikGracz2[3] + wynikGracz2[4] + wynikGracz2[5] + wynikGracz2[6];
-//        int trzyJednakoweGracz2 = wynikGracz2[8];
-//        int cztwryJednakoweGracz2 = wynikGracz2[9];
-//        int fullGracz2 = wynikGracz2[10];
-//        int malyStritGracz2 = wynikGracz2[11];
-//        int duzyStritGracz2 = wynikGracz2[12];
-//        int generalGracz2 = wynikGracz2[13];
-//        int szansaGracz2 = wynikGracz2[14];
-//        int suma2Gracz2 = wynikGracz2[15] = wynikGracz2[8] + wynikGracz2[9] + wynikGracz2[10] + wynikGracz2[11] + wynikGracz2[12] + wynikGracz2[13] + wynikGracz2[14];
-//        int razemGracz2 = wynikGracz2[16];
+
 
         for (int z = 0; z < 13; z++) {
 
