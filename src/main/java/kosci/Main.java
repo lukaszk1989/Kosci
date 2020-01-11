@@ -41,7 +41,7 @@ public class Main {
 
             while (wybranieFigury < 1) {
                 if (iloscRzutow <= 2) {
-                    System.out.println("CCzy chcesz rzucić ponownie kośćmi? Tak wpisz 1, wybierz figurę wpisz 2");
+                    System.out.println("Czy chcesz rzucić ponownie kośćmi? Tak wpisz 1, wybierz figurę wpisz 2");
                     int odpowiedz = scanner.nextInt();
                     if (odpowiedz == 1) {
                         iloscRzutow++;
@@ -226,7 +226,6 @@ public class Main {
             if (sprawdzenie[figura - 1] == 0) {
                 switch (figura) {
                     case 1:
-                        //   if (sprawdzenie[0] == 0) {
                         if (tab[0] == 1 || tab[1] == 1 || tab[2] == 1 || tab[3] == 1 || tab[4] == 1) {
                             int sumaJedynek = 0;
                             for (int i = 0; i < tab.length; i++) {
