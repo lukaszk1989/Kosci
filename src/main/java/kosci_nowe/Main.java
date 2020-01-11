@@ -14,9 +14,8 @@ public class Main {
         Player player1 = new Player(gracz1);
         Player player2 = new Player(gracz2);
 
-        GamePlay gamePlay = new GamePlay(player1,player2);
+        GamePlay gamePlay = new GamePlay(player1, player2);
         gamePlay.play();
-
 
 
     }

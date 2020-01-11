@@ -12,7 +12,7 @@ public class GamePlay {
         this.player2 = player2;
     }
 
-    private   void sort(int tab[]) {
+    private void sort(int tab[]) {
         int temp;
         int zmiana = 1;
 
@@ -32,7 +32,7 @@ public class GamePlay {
 
     }
 
-    private   void tabelaWynikow(Player player) {
+    private void tabelaWynikow(Player player) {
         System.out.print("1 - Jedynki: " + player.getWynik()[0]);
         System.out.println("        7 - trzy jednakowe: " + player.getWynik()[8]);
         System.out.print("2 - dwójki: " + player.getWynik()[1]);
@@ -218,7 +218,7 @@ public class GamePlay {
         }
     }
 
-    private   void rzut(Player player) {
+    private void rzut(Player player) {
         Random a = new Random();
         Scanner scanner = new Scanner(System.in);
         int k1 = a.nextInt(6) + 1;
@@ -287,7 +287,7 @@ public class GamePlay {
         }
     }
 
-    public  void play(){
+    public void play() {
         for (int z = 0; z < 13; z++) {
             System.out.println("Rzuca gracz: " + player1.getName());
             rzut(player1);
